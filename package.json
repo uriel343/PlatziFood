@@ -1,0 +1,25 @@
+{
+  "name": "platzifood",
+  "version": "1.0.0",
+  "description": "Using tailwind to css",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "postcss css/tailwind.css -o public/css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uriel343/PlatziFood.git"
+  },
+  "author": "@mr_ucode",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/uriel343/PlatziFood/issues"
+  },
+  "homepage": "https://github.com/uriel343/PlatziFood#readme",
+  "dependencies": {
+    "autoprefixer": "^9.8.4",
+    "postcss-cli": "^7.1.1",
+    "tailwindcss": "^1.4.6"
+  }
+}
