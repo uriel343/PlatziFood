@@ -10,20 +10,54 @@
       integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
       crossorigin="anonymous"
     />
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+
     <title>Inicio</title>
   </head>
   <body class="min-h-screen bg-gray-400">
-    <div
-      class="px-2 h-12 items-center bg-secondary text-white flex justify-between"
-    >
-      <div class="flex flex-row items-center">
-        <img class="w-12 py-1 px-2" src="./images/food-truck.svg" alt="" />
-        <h1 class="font-semibold ml-1 text-xl">
-          <strong class="font-bold text-primary">FOOD</strong> TRUCK
-        </h1>
+    <nav x-data="{ open: false }" class="fixed z-10 w-full bg-secondary">
+      <div class="px-2 h-12 items-center bg-secondary text-white flex justify-between">
+        <div class="flex flex-row items-center">
+          <img class="w-12 py-1 px-2" src="./images/food-truck.svg" alt="" />
+          <h1 class="font-semibold ml-1 text-xl">
+            <strong class="font-bold text-primary">FOOD</strong> TRUCK
+          </h1>
+        </div>
+        <div @click = " open = true" class="text-2xl">&equiv;</div>
       </div>
-      <div class="text-2xl">&equiv;</div>
-    </div>
+      <div x-show = "open" @click.away="open = false">
+        <div class="mx-2 my-1">
+          <input
+            placeholder="Search"
+            class="form-control"
+            type="search"
+            name=""
+            id=""
+          />
+        </div>
+        <div class="py-2 mx-2 md:flex justify-around text-gray-100">
+          <div class="flex">
+            Precio:
+            <div class="ml-2">$</div>
+            <div class="ml-2 text-primary">$$</div>
+            <div class="ml-2">$$$</div>
+          </div>
+          <div class="flex">
+            <div>
+              Calificación
+            </div>
+            <div class="ml-2 text-primary">&starf;</div>
+            <div class="ml-px text-primary">&starf;</div>
+            <div class="ml-px text-primary">&starf;</div>
+            <div class="ml-px text-primary">&starf;</div>
+            <div class="ml-px">&star;</div>
+          </div>
+          <div>
+            <button class="btn bg-primary">Filtrar</button>
+          </div>
+        </div>
+      </div>
+    </nav>
     <main>
       <div
         class="h-56 md:h-100 md:bg-center bg-cover bg-center bg-no-repeat"
@@ -50,7 +84,7 @@
             Hamburguesa
           </h2>
           <p class="text-gray-700 leading-snug">
-            Hamburguesa de queso, aderezo y chipotle
+            Hamburguesa de queso, aderezo y chipotle con las especialidades de casa que tu desees con un descuento increíble 
           </p>
           <div class="mt-2 text-sm font-semibold text-gray-800">US $8.99</div>
           <div class="mt-2 text-yellow-700 text-xs">
@@ -134,9 +168,28 @@
         </div>
       </div>
     </div>
-    <div>
-      <div>Nombre</div>
-      <input class="border border-blue-300 bg-gray-200" type="text" placeholder="Nombre">
+    <div class="mx-2 container mx-auto mt-4">
+      <div>
+        <div>Nombre</div>
+        <input class="form-control" type="text" placeholder="Nombre" />
+      </div>
+      <div>
+        <div>Email</div>
+        <input class="form-control" type="email" placeholder="Email" />
+      </div>
+      <div>
+        <div>Comentarios</div>
+        <textarea
+          class="form-control"
+          name=""
+          id=""
+          cols="30"
+          rows="10"
+        ></textarea>
+      </div>
+      <button class="btn bg-primary mx-auto">
+        Enviar
+      </button>
     </div>
     <footer class="text-white w-full bg-secondary">
       <div class="md:flex flex-row-reverse justify-around">
